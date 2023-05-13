@@ -1,0 +1,15 @@
+RewriteEngine On
+Options -Indexes
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^blog/([0-9a-z/-]+)$ posts/index.php?id=$1 [L,QSA]
+
+RewriteRule ^search/([a-zA-Z0-9-/]+)/([a-zA-Z0-9-/]+)$ posts/search.php?userid=$1&search=$2 [L,QSA]
+
+RewriteRule ([a-zA-Z0-9-/]+)/([a-zA-Z0-9-/]+)$ posts/display.php?userid=$1&postid=$2 [L,QSA]
+
+php_value display_errors 1
+php_flag output_buffering on
+ErrorDocument 404 /404.html

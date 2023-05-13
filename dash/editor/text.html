@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+</head>
+<body>
+<textarea name="editor"></textarea>
+<script src="ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+//CK EDITOR
+
+CKEDITOR.replace("editor", {
+	extraPlugins: 'codesnippet',
+	codeSnippet_theme: 'monokai_sublime'
+} );
+</script>
+</body>
+</html>
